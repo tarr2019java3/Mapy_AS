@@ -84,12 +84,13 @@ public class Main {
         schoolListMap.put(s2, szkola2);
         schoolListMap.put(s1, szkola1);
         System.out.println();
-        for (Map.Entry<School, List<Student>> entry : schoolListMap.entrySet()) {           //foreach do iterowania po mapie
-            System.out.println(entry.getKey().getName());
-            List<Student> tmp = new ArrayList<>();
-            tmp.addAll(entry.getValue());
-            for (Student it: tmp) {
-                System.out.println(String.format("%2s", " ") + it.getName() + " " + it.getLastname());
+        for (var entry : schoolListMap.entrySet()) {           //foreach do iterowania po mapie
+            System.out.println(entry.getKey().getName().toUpperCase() + "   " + entry.getKey().getCity().toUpperCase());
+//            List<Student> tmp = new ArrayList<>();
+//            //tmp.addAll(entry.getValue());
+            int x = 1;
+            for (var it : entry.getValue()) {
+                System.out.println(String.format("%5s", x++ +"--") + it.getName() + " " + it.getLastname());
             }
 
         }
